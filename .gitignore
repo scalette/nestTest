@@ -1,0 +1,46 @@
+# Compiled code
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages and dependencies
+node_modules/
+mongo-data-7.0/
+vendor/
+
+# Cache and temporary files
+*.DS_Store
+Thumbs.db
+._*
+.Spotlight-V100
+.Trashes
+
+# IDE and editor files
+.idea/
+.vscode/
+*.project
+*.classpath
+*.settings/
+
+# Logs and build artifacts
+*.log
+*.tmp
+*.pid
+*.swp
+dist/
+build/
+
+# OS generated files
+._*
+.DS_Store
+Thumbs.db
+
+# Sensitive information
+.env
+config.json
+
+# Specific to your project
+# ... add any additional files or directories here ...
