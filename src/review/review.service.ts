@@ -20,7 +20,7 @@ export class ReviewService {
 	async findByProductId(productId: string): Promise<DocumentType<ReviewModel>[]> {
 		return this.reviewModel.find({ productId: new Types.ObjectId(productId) }).exec();
 	}
-	
+
 	async findAll(): Promise<DocumentType<ReviewModel>[]> {
 		return this.reviewModel.find({}).exec();
 	}
