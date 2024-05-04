@@ -12,8 +12,7 @@ jobs:
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@v5
       with:
+        name: scalette/nestTest/nestTestImage
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
         registry: ghcr.io
-        name: ghcr.io/scalette/nestTest/nestDocker
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-        tags: "develop"
