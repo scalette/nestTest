@@ -44,3 +44,4 @@ config.json
 
 # Specific to your project
 # ... add any additional files or directories here ...
+/uploads
