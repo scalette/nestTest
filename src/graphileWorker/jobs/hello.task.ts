@@ -5,11 +5,23 @@ import { Task, TaskHandler } from 'nestjs-graphile-worker';
 @Injectable()
 @Task('hello')
 export class HelloTask {
-  private logger = new Logger(HelloTask.name);
+    private logger = new Logger(HelloTask.name);
 
-  @TaskHandler()
-  async handler(payload: any, _helpers: Helpers) {
-    await new Promise((res) => { setTimeout(() => res('task Done'), 23000) })
-    this.logger.log(`JOB TASK RUN: payload ${JSON.stringify(payload)}`);
-  }
+    @TaskHandler()
+    async handler(payload: any, _helpers: Helpers) {
+        await new Promise((res) => { setTimeout(() => res('task Done'), 23000) })
+        this.logger.log(`JOB TASK RUN: payload ${JSON.stringify(payload)}`);
+    }
+}
+
+@Injectable()
+@Task('hello2')
+export class HelloTask2 {
+    private logger = new Logger(HelloTask.name);
+
+    @TaskHandler()
+    async handler(payload: any, _helpers: Helpers) {
+        await new Promise((res) => { setTimeout(() => res('task Done'), 23000) })
+        this.logger.log(`JOB TASK RUN: payload ${JSON.stringify(payload)}`);
+    }
 }

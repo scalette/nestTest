@@ -4,7 +4,7 @@ import { TopPageModule } from 'src/top-page/top-page.module';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [TopPageModule, ConfigModule],
-  controllers: [SitemapController]
+    imports: [TopPageModule, ConfigModule],
+    controllers: [SitemapController]
 })
 export class SitemapModule { }

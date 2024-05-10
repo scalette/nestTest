@@ -21,7 +21,7 @@ export class AppController {
 	}
 	@Get('2')
 	async getHello2() {
-		await this.graphileWorker.addJob('hello', { hello1232222: 'world434234' }, { queueName: 'second', flags: ['hello2'] });
+		await this.graphileWorker.addJob('hello2', { hello1232222: 'world434234' }, { queueName: 'second', flags: ['hello2'] });
 		return this.appService.getHello();
 	}
 }
