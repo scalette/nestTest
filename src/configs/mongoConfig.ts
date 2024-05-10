@@ -8,17 +8,17 @@ export const getMongoConfig = async (configService: ConfigService): Promise<Type
 	};
 };
 
-const getMongoString = (configService: ConfigService) =>
-	'mongodb://' +
-	configService.get('MONGO_LOGIN') +
+const getMongoString = (configService: ConfigService) => 'mongodb://' +
+	configService.get('database.mongo.login') +
 	':' +
-	configService.get('MONGO_PASSWORD') +
+	configService.get('database.mongo.password') +
 	'@' +
-	configService.get('MONGO_HOST') +
+	configService.get('database.mongo.host') +
 	':' +
-	configService.get('MONGO_PORT') +
+	configService.get('database.mongo.port') +
 	'/' +
-	configService.get('MONGO_AUTHDATABASE');
+	configService.get('database.mongo.authDataBase')
+
 
 const getMongoOptions = () => ({
 	useNewUrlParser: true,
