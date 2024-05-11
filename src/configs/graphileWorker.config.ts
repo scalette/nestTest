@@ -4,10 +4,21 @@ import { GraphileWorkerConfiguration } from 'nestjs-graphile-worker';
 
 export const getGraphileWorkerConfig = async (configService: ConfigService): Promise<GraphileWorkerConfiguration> => {
     return {
-        connectionString: 'postgresql://admin:admin@localhost:5444/default',
+        connectionString: getPostgreConnectionString(configService),
         forbiddenFlags: ['hello'],
         schema: 'graphileWorkerNewSchema',
-        concurrency: 11,
+        concurrency: 10,
         crontabFile: `${path}/src/graphileWorker/.crontab`,
     };
 };
+
+const getPostgreConnectionString = (configService: ConfigService) => 'postgresql://' +
+    configService.get('database.postgreSQL.login') +
+    ':' +
+    configService.get('database.postgreSQL.password') +
+    '@' +
+    configService.get('database.postgreSQL.host') +
+    ':' +
+    configService.get('database.postgreSQL.port') +
+    '/' +
+    configService.get('database.postgreSQL.authDataBase');
