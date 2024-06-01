@@ -7,6 +7,7 @@ import { JwtAuthGuard } from 'src/auth/guards/jwt.guard';
 
 @Injectable()
 export class TopPageService {
+    //@ts-ignore
     constructor(@InjectModel(TopPageModel) private readonly topPageModel: ModelType<TopPageModel>) { }
 
     @UseGuards(JwtAuthGuard)

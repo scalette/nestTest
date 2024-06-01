@@ -7,6 +7,7 @@ import { ReviewModel } from './review.model';
 
 @Injectable()
 export class ReviewService {
+	//@ts-ignore
 	constructor(@InjectModel(ReviewModel) private readonly reviewModel: ModelType<ReviewModel>) { }
 
 	async create(dto: CreateReviewDto): Promise<DocumentType<ReviewModel>> {

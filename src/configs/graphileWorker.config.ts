@@ -7,7 +7,7 @@ export const getGraphileWorkerConfig = async (configService: ConfigService): Pro
         connectionString: getPostgreConnectionString(configService),
         forbiddenFlags: ['hello'],
         schema: 'graphileWorkerNewSchema',
-        concurrency: 10,
+        concurrency: 2,
         crontabFile: `${path}/src/graphileWorker/.crontab`,
     };
 };
