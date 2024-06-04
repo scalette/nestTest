@@ -13,6 +13,7 @@ import { SitemapModule } from './sitemap/sitemap.module';
 import configuration from './configs/env/EnvironmentVariables';
 import { validate } from './configs/env/EnvironmentVariables.validation';
 import { GraphileModule } from './graphileWorker/graphileWorker.module';
+import { MoviesModule } from './movies/movies.module';
 @Module({
 	imports: [
 		ConfigModule.forRoot({
@@ -25,12 +26,13 @@ import { GraphileModule } from './graphileWorker/graphileWorker.module';
 			inject: [ConfigService],
 			useFactory: getMongoConfig,
 		}),
-		AuthModule,
-		TopPageModule,
-		ProductModule,
-		ReviewModule,
-		FilesModule,
-		SitemapModule,
+		// AuthModule,
+		// TopPageModule,
+		MoviesModule,
+		// ProductModule,
+		// ReviewModule,
+		// FilesModule,
+		// SitemapModule,
 		GraphileModule,
 	],
 	controllers: [AppController],

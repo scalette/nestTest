@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { GraphileWorkerModule } from 'nestjs-graphile-worker';
 import { HelloTaskListeners } from './jobs/hello.listeners';
 import { HelloTask, HelloTask2 } from './jobs/hello.task';
-import { path } from 'app-root-path';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { getGraphileWorkerConfig } from 'src/configs/graphileWorker.config';
 

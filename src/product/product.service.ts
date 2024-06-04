@@ -5,12 +5,20 @@ import { ModelType } from '@typegoose/typegoose/lib/types';
 import { CreateProductDto } from './dto/create-product.dto';
 import { FindProductDto } from './dto/find-product.dto';
 import { ReviewModel } from 'src/review/review.model';
+import { CommandBus } from '@nestjs/cqrs';
+import { ProductCreatedCommand } from './commands/productCreated.command';
 
 @Injectable()
 export class ProductService {
-    constructor(@InjectModel(ProductModel) private readonly productModel: ModelType<ProductModel>) { }
+    //@ts-ignore
+    constructor(@InjectModel(ProductModel) private readonly productModel: ModelType<ProductModel>, private commandBus: CommandBus) { }
     async create(dto: CreateProductDto) {
-        return this.productModel.create(dto);
+        const product = await this.productModel.create(dto);
+        this.commandBus.execute(
+            new ProductCreatedCommand(product.id)
+        )
+        console.log('creating from service')
+        return
     }
 
     async findById(id: string) {

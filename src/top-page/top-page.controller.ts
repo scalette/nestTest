@@ -8,11 +8,9 @@ import {
 	Param,
 	Patch,
 	Post,
-	UseGuards,
 	UsePipes,
 	ValidationPipe
 } from '@nestjs/common';
-import { JwtAuthGuard } from '../auth/guards/jwt.guard';
 import { IdValidationPipe } from '../pipes/id-validation.pipe';
 import { FindTopPageDto } from './dto/find-top-page.dto';
 import { TOP_PAGE_NOT_FOUND_ERROR } from './top-page.constants';
