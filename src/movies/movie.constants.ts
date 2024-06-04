@@ -1,0 +1,1 @@
+export const MOVIE_NOT_FOUND_ERROR = 'Фильм с данным названием не существует'

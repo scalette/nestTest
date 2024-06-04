@@ -17,6 +17,7 @@ export class ProductService {
         this.commandBus.execute(
             new ProductCreatedCommand(product.id)
         )
+        console.log('creating from service')
         return
     }
 
